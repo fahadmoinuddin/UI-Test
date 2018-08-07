@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.test.solution.R" />
+        <variable
+            name="viewModel"
+            type="com.test.solution.case1.viewmodel.UIViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/view_1" />
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/view_2" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/view_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_grey_200">
+
+            <TextView
+                android:id="@+id/view_3_textview_1"
+                style="@style/TextViewTheme"
+                android:text="@string/textview1"
+                app:layout_constraintBottom_toTopOf="@+id/view_3_textview_2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_3_textview_2"
+                style="@style/TextViewTheme"
+                android:text="@string/textview2"
+                app:layout_constraintBottom_toTopOf="@+id/view_3_textview_3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_3_textview_1" />
+
+            <TextView
+                android:id="@+id/view_3_textview_3"
+                style="@style/TextViewTheme"
+                android:text="@string/textview1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_3_textview_2" />
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center"
+            android:id="@+id/view_4"
+            android:textSize="24sp"
+            android:text="@{viewModel.view4Text}"
+            tools:text="Item 1"
+            android:textStyle="bold"
+            android:textColor="@color/md_white_1000"
+            android:background="@color/md_black_1000"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+            <Button
+                style="@style/ButtonTheme"
+                android:id="@+id/view_5_button_1"
+                android:text="@string/redbtn"
+                android:tag="red"
+                android:background='@{viewModel.color.equals("red") ? @color/md_red_500 : @color/md_grey_300 }'
+                android:onClick='@{() -> viewModel.colorButtonClicked("red")}'
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/view_5_button_2"/>
+
+            <Button
+                style="@style/ButtonTheme"
+                android:id="@+id/view_5_button_2"
+                android:text="@string/bluebtn"
+                android:tag="blue"
+                android:background='@{viewModel.color.equals("blue") ? @color/md_blue_500 : @color/md_grey_300 }'
+                android:onClick='@{() -> viewModel.colorButtonClicked("blue")}'
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/view_5_button_1"
+                app:layout_constraintRight_toLeftOf="@+id/view_5_button_3" />
+
+            <Button
+                style="@style/ButtonTheme"
+                android:id="@+id/view_5_button_3"
+                android:text="@string/greenbtn"
+                android:tag="green"
+                android:background='@{viewModel.color.equals("green") ? @color/md_green_500 : @color/md_grey_300 }'
+                android:onClick='@{() -> viewModel.colorButtonClicked("green")}'
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/view_5_button_2"/>
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+</layout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">UI Test</string>
+    <string name="title_case_1">Case 1</string>
+    <string name="title_case_2">Case 2</string>
+    <string name="navigate">Navigate</string>
+    <string name="select_loaction_text">Select a location to navigate</string>
+    <string name="check_internet">Check your internet connection and try again.</string>
+    <string name="mode_of_transport_textview">Mode of transport</string>
+    <string name="title_activity_map">Map</string>
+    <string name="textview1">TextView 1</string>
+    <string name="textview2">TextView 2</string>
+    <string name="textview3">TextView 3</string>
+    <string name="redbtn">Red Btn</string>
+    <string name="bluebtn">Blue Btn</string>
+    <string name="greenbtn">Green Btn</string>
+    <string name="view_pager_click">You clicked fragment %1$d</string>
+</resources>
